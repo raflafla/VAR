@@ -5,6 +5,7 @@
   <div class="min-h-screen bg-zinc-900 text-white p-6 max-w-xl mx-auto space-y-6">
     <div class="navbar">
     <NuxtLink to="/" class="navbar-links">Home</NuxtLink>
+    <NuxtLink to="/reuniao" class="navbar-links">Reunião</NuxtLink>
     <NuxtLink to="/historico" class="navbar-links">Historico</NuxtLink>
     </div>
     <form class="space-y-4">
@@ -28,17 +29,16 @@
       </button>
     </form>
 
+    <div v-if="avisoBanir" class="alert-banir">
+  ⚠️ Lembre-se de aplicar o banimento na cidade manualmente!
+</div>
+
+
     <div v-if="mensagemDiscord" class="bg-zinc-800 p-4 rounded space-y-6 border border-purple-700">
       <div>
         <h2 class="font-semibold text-purple-300">📄 Modelo para salvar no Discord:</h2>
         <pre class="pre">{{ mensagemDiscord }}</pre>
         <button @click="copiarTexto(mensagemDiscord)" class="btn-copy">Copiar</button>
-      </div>
-
-      <div>
-        <h2 class="font-semibold text-purple-300">📩 Mensagem para marcar reunião:</h2>
-        <pre class="pre">{{ mensagemReuniao }}</pre>
-        <button @click="copiarTexto(mensagemReuniao)" class="btn-copy">Copiar</button>
       </div>
 
       <div>
@@ -65,6 +65,8 @@ const mensagemDiscord = ref('')
 const mensagemReuniao = ref('')
 const mensagemBan = ref('')
 const historicoMensagens = ref([])
+const avisoBanir = ref(false)
+
 
 const motivos = [
   { nome: 'RDM/VDM', tempo: '3 dias' },
@@ -104,6 +106,8 @@ Caso não corresponda à esta mensagem, uma punição entrará em vigor.`
 
   mensagemBan.value = `Sua allowlist está sendo removida por ${tempoBan.value}, por conduta inadequada no Complexo XP.  
 Segue nossa análise: ${motivo.value}`
+
+  avisoBanir.value = true
 
   salvarNoHistoricoLocal(mensagemDiscord.value)
 }

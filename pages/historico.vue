@@ -4,6 +4,7 @@
   <div class="min-h-screen bg-zinc-900 text-white p-6 max-w-xl mx-auto space-y-6">
     <div class="navbar">
     <NuxtLink to="/" class="navbar-links">Home</NuxtLink>
+    <NuxtLink to="/reuniao" class="navbar-links">Reunião</NuxtLink>
     <NuxtLink to="/historico" class="navbar-links">Historico</NuxtLink>
     </div>
     <div v-if="historico.length" class="space-y-4">

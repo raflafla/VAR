@@ -3,6 +3,30 @@ body {
   color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.alert-banir {
+  background-color: #7f1d1d; /* vermelho escuro */
+  border: 1px solid #f87171; /* vermelho claro */
+  color: #ffffff; /* texto vermelho mais claro */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.mensagem-var{
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #ef4444;
+  outline: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 15px;
+}
 .navbar-links {
     display: flex;
     justify-content: space-between;
