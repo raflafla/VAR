@@ -5,7 +5,7 @@
     <div class="navbar">
     <NuxtLink to="/" class="navbar-links">Home</NuxtLink>
     <NuxtLink to="/reuniao" class="navbar-links">Reunião</NuxtLink>
-    <NuxtLink to="/historico" class="navbar-links">Historico</NuxtLink>
+    <NuxtLink to="/historico" class="navbar-links">Histórico</NuxtLink>
     
     </div>
 

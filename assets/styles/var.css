@@ -3,7 +3,16 @@ body {
   color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.mensagem-discord-historico{
+  background-color: #1e1e1e; /* fundo escuro */
+  color: #ffffff; /* texto branco */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ef4444; /* borda vermelha */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  font-size: 15px;
+}
 .alert-banir {
   background-color: #7f1d1d; /* vermelho escuro */
   border: 1px solid #f87171; /* vermelho claro */
@@ -167,4 +176,41 @@ border: none;
     margin-bottom: 1rem;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.busca-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  width: 50%;
+  margin: 0 auto;
+
+}
+.input-busca {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #1e1e1e;
+  color: white;
+  width: 100%;
+}
+.btn-buscar, .btn-limpar {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.btn-buscar {
+  background-color: #ef4444;
+  color: white;
+}
+.btn-limpar {
+  background-color: #ef4444;
+  color: white;
+}
+.contador-total{
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.25rem;
+  
 }

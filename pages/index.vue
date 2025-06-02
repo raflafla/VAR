@@ -6,23 +6,23 @@
     <div class="navbar">
     <NuxtLink to="/" class="navbar-links">Home</NuxtLink>
     <NuxtLink to="/reuniao" class="navbar-links">Reunião</NuxtLink>
-    <NuxtLink to="/historico" class="navbar-links">Historico</NuxtLink>
+    <NuxtLink to="/historico" class="navbar-links">Histórico</NuxtLink>
     </div>
     <form class="space-y-4">
         <h1 class="titulo">VAR</h1>
-      <input v-model="nomeVar" placeholder="Seu nome (VAR)" class="input" />
-      <input v-model="cidadeId" placeholder="ID na cidade" class="input" />
-      <input v-model="discordId" placeholder="ID do Discord" class="input" />
+      <input v-model="nomeVar" placeholder="Seu nome (VAR)" class="input" required/>
+      <input v-model="cidadeId" placeholder="ID na cidade" class="input" required/>
+      <input v-model="discordId" placeholder="ID do Discord" class="input" required/>
 
       <select v-model="motivo" class="input" @change="sugerirTempoBan">
-        <option disabled value="">Selecione o motivo</option>
+        <option disabled value="" >Selecione o motivo</option>
         <option v-for="item in motivos" :key="item.nome" :value="item.nome">
           {{ item.nome }}
         </option>
       </select>
 
-      <input v-model="tempoBan" placeholder="Sugerir tempo de ban (ex: 3 dias, 24h...)" class="input" />
-      <input v-model="evidencia" placeholder="Link da evidência" class="input" />
+      <input v-model="tempoBan" placeholder="Sugerir tempo de ban (ex: 3 dias, 24h...)" class="input" required/>
+      <input v-model="evidencia" placeholder="Link da evidência" class="input" required/>
 
       <button type="button" class="btn-primary" @click="gerarMensagens">
         Gerar mensagens automáticas
@@ -39,6 +39,7 @@
         <h2 class="font-semibold text-purple-300">📄 Modelo para salvar no Discord:</h2>
         <pre class="pre">{{ mensagemDiscord }}</pre>
         <button @click="copiarTexto(mensagemDiscord)" class="btn-copy">Copiar</button>
+
       </div>
 
       <div>
@@ -113,14 +114,20 @@ Segue nossa análise: ${motivo.value}`
 }
 
 function copiarTexto(texto) {
-  navigator.clipboard.writeText(texto.value)
+  if (!texto || typeof texto !== 'string') {
+    alert('Texto inválido ou vazio.')
+    return
+  }
+
+  navigator.clipboard.writeText(texto)
     .then(() => alert('Texto copiado com sucesso!'))
     .catch(() => alert('Erro ao copiar texto.'))
 }
 
+
 function salvarNoHistoricoLocal(mensagem) {
   const historico = JSON.parse(localStorage.getItem('historico_var') || '[]')
-  historico.unshift(mensagem) // adiciona no topo
+  historico.unshift(mensagem) 
   localStorage.setItem('historico_var', JSON.stringify(historico))
   historicoMensagens.value = historico
 }
