@@ -54,7 +54,7 @@ function carregarHistoricoLocal() {
 }
 
 function formatarMensagem(mensagem) {
-  return msg.replace(/\*\*/g, '').split('\n')
+  return mensagem.replace(/\*\*/g, '').split('\n')
 }
 
 function filtrarDenuncias() {
