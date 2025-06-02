@@ -1,4 +1,5 @@
 <template>
+  <link rel="shortcut icon" type="image/png" href="../public/ico.ico"/>
     <body>
         
 

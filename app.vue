@@ -8,7 +8,8 @@
 
   </Head>
   <NuxtPage />
-
+  <link rel="icon" href="/public/ico.ico">  
+  
 </template>
 
 
