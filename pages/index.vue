@@ -4,7 +4,7 @@
         
 
   <div class="min-h-screen bg-zinc-900 text-white p-6 max-w-xl mx-auto space-y-6">
-    <navb></navb>
+
     <form class="space-y-4">
         <h1 class="titulo">VAR</h1>
       <input v-model="nomeVar" placeholder="Seu nome (VAR)" class="input" required/>
@@ -39,7 +39,7 @@
 
       </div>
 
-      <div>
+      <div class="modelo-ban">
         <h2 class="font-semibold text-purple-300">⛔ Mensagem de ban:</h2>
         <pre class="pre">{{ mensagemBan }}</pre>
         <button @click="copiarTexto(mensagemBan)" class="btn-copy">Copiar</button>

@@ -2,10 +2,10 @@
     <body>
   <div class="min-h-screen bg-zinc-900 text-white p-6 max-w-xl mx-auto space-y-6">
 
-    <navb></navb>
+
 
     <form class="space-y-4">
-        <h1 class="text-2xl font-bold text-red-400">📩 Gerador de Mensagem de Reunião</h1>
+        <h1 class="titulo">Reunião</h1>
       <input v-model="nomeVar" placeholder="Seu nome (VAR)" class="input" />
       <button type="button" @click="gerarMensagem" class="btn-primary">Gerar mensagem</button>
     </form>

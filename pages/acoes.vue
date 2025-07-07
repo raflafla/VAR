@@ -1,8 +1,10 @@
 <template>
-  <link rel="shortcut icon" type="image/png" href="../public/ico.ico"/>
+ 
     <body>
   <div class="min-h-screen bg-zinc-900 text-white p-6 max-w-xl mx-auto space-y-6">
-    <navb></navb>
+
+
+
     <form class="space-y-4">
         <h1 class="titulo">Solicitação de Tela</h1>
       <input v-model="nomeVar" placeholder="Seu nome (VAR)" class="input" required/>
@@ -23,6 +25,8 @@
         <button @click="copiarTexto(mensagemBan)" class="btn-copy">Copiar</button>
       </div>
     </div>
+
+<footerb></footerb>
    </body>
 </template>
 

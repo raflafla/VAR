@@ -1,7 +1,7 @@
 <template>
   <body>
     <div class="min-h-screen bg-zinc-900 text-white p-6 max-w-xl mx-auto space-y-6">
-      <navb></navb>
+
 
       <h1 class="titulo">Histórico</h1>
 
