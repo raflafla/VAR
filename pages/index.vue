@@ -4,11 +4,7 @@
         
 
   <div class="min-h-screen bg-zinc-900 text-white p-6 max-w-xl mx-auto space-y-6">
-    <div class="navbar">
-    <NuxtLink to="/" class="navbar-links">Home</NuxtLink>
-    <NuxtLink to="/reuniao" class="navbar-links">Reunião</NuxtLink>
-    <NuxtLink to="/historico" class="navbar-links">Histórico</NuxtLink>
-    </div>
+    <navb></navb>
     <form class="space-y-4">
         <h1 class="titulo">VAR</h1>
       <input v-model="nomeVar" placeholder="Seu nome (VAR)" class="input" required/>
@@ -34,7 +30,7 @@
   ⚠️ Lembre-se de aplicar o banimento na cidade manualmente!
 </div>
 
-
+  <div class="mensagembug">
     <div v-if="mensagemDiscord" class="bg-zinc-800 p-4 rounded space-y-6 border border-purple-700">
       <div>
         <h2 class="font-semibold text-purple-300">📄 Modelo para salvar no Discord:</h2>
@@ -49,6 +45,7 @@
         <button @click="copiarTexto(mensagemBan)" class="btn-copy">Copiar</button>
       </div>
     </div>
+  </div>
   </div>
    </body>
 </template>
@@ -80,7 +77,7 @@ const motivos = [
   { nome: 'Falta de amor à vida', tempo: '7 dias' },
   { nome: 'Safezone', tempo: '3 dias' },
   { nome: 'Falta de bom senso', tempo: '3 dias' },
-  { nome: 'Quebra de regra de ação', tempo: '3 dias' },
+  { nome: 'Quebra de regra de ação', tempo: '1 dias' },
   { nome: 'Abuso de bug', tempo: 'Análise' },
   { nome: 'Falta de tela', tempo: 'Indeterminado' }
 ]

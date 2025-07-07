@@ -2,19 +2,14 @@
     <body>
   <div class="min-h-screen bg-zinc-900 text-white p-6 max-w-xl mx-auto space-y-6">
 
-    <div class="navbar">
-    <NuxtLink to="/" class="navbar-links">Home</NuxtLink>
-    <NuxtLink to="/reuniao" class="navbar-links">Reunião</NuxtLink>
-    <NuxtLink to="/historico" class="navbar-links">Histórico</NuxtLink>
-    
-    </div>
+    <navb></navb>
 
     <form class="space-y-4">
         <h1 class="text-2xl font-bold text-red-400">📩 Gerador de Mensagem de Reunião</h1>
       <input v-model="nomeVar" placeholder="Seu nome (VAR)" class="input" />
       <button type="button" @click="gerarMensagem" class="btn-primary">Gerar mensagem</button>
     </form>
-  
+    
     <div v-if="mensagem" class="mensagem-var">
       <pre class="text-white whitespace-pre-wrap">{{ mensagem }}</pre>
       <button @click="copiarTexto(mensagem)" class="btn-copy">Copiar</button>
